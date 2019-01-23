@@ -1,0 +1,25 @@
+{
+    "Ten": "Smart Tivi Samsung 40 inch",
+    "Ma_so": "TIVI_11",
+    "Ky_hieu": "UA40K5300",
+    "Don_gia_Ban": 8640000,
+    "Don_gia_Nhap": 7540000,
+    "So_luong_Ton": 60,
+    "Danh_sach_Phieu_Ban": [
+        {
+            "Ngay": "23-01-2019",
+            "So_luong": 2,
+            "Don_gia": 8640000,
+            "Tien": 17280000,
+            "Nhan_vien": {
+                "Ho_ten": "Tô thị bé Bé",
+                "Ma_so": "NV_2"
+            }
+        }
+    ],
+    "Danh_sach_Phieu_Nhap": [],
+    "Nhom_Tivi": {
+        "Ten": "Samsung",
+        "Ma_so": "SAMSUNG"
+    }
+}
