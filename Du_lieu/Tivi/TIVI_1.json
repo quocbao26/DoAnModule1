@@ -4,7 +4,7 @@
     "Ky_hieu": "UA49MU6500",
     "Don_gia_Ban": 29850000,
     "Don_gia_Nhap": 29800000,
-    "So_luong_Ton": 70,
+    "So_luong_Ton": 69,
     "Danh_sach_Phieu_Ban": [
         {
             "Ngay": "21-01-2019",
@@ -64,6 +64,16 @@
             "Nhan_vien": {
                 "Ho_ten": "Tô thị bé Bé",
                 "Ma_so": "NV_2"
+            }
+        },
+        {
+            "Ngay": "24-01-2019",
+            "So_luong": 1,
+            "Don_gia": 29850000,
+            "Tien": 29850000,
+            "Nhan_vien": {
+                "Ho_ten": "Nguyên văn bé Xíu",
+                "Ma_so": "NV_3"
             }
         }
     ],

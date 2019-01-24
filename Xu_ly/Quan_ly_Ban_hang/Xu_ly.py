@@ -62,17 +62,18 @@ def Tong_ket_1_Tivi_Theo_Ngay(Tivi, Ngay):
     Thong_tin = {'Ten':Tivi['Ten'], 'So_luong':Tong_So_luong, 'Don_gia': Don_gia, 'Tien':Tong_Tien}
     return Thong_tin
 
-def Tong_ket_1_Tivi_Theo_Ngay_Cua_Nhan_Vien(Tivi, Ngay):
+def Tong_ket_1_Tivi_Theo_Ngay_Cua_Nhan_Vien(Tivi, Ngay, Ma_so):
     Tong_So_luong = 0
     Tong_Tien = 0
     Don_gia = 0
     Ma_so_nv = ""
     for Phieu_ban in Tivi['Danh_sach_Phieu_Ban']:
-        if Phieu_ban['Ngay'] == Ngay:
-            Tong_So_luong += int(Phieu_ban['So_luong'])
-            Tong_Tien += int(Phieu_ban['Tien'])
-            Don_gia = Phieu_ban['Don_gia']
-            Ma_so_nv = Phieu_ban['Nhan_vien']['Ma_so']
+        if Phieu_ban['Nhan_vien']['Ma_so'] == Ma_so:
+            if Phieu_ban['Ngay'] == Ngay:
+                Tong_So_luong += int(Phieu_ban['So_luong'])
+                Tong_Tien += int(Phieu_ban['Tien'])
+                Don_gia = Phieu_ban['Don_gia']
+                Ma_so_nv = Phieu_ban['Nhan_vien']['Ma_so']
     Thong_tin = {'Ma_so':Ma_so_nv,'Ten':Tivi['Ten'], 'So_luong':Tong_So_luong, 'Don_gia': Don_gia, 'Tien':Tong_Tien}
     print(Thong_tin)
     return Thong_tin
@@ -92,14 +93,15 @@ def Tong_ket_Doanh_thu_theo_nhan_vien(Danh_sach_Tivi, Ngay):
     for item in nv:
         dic[item['Ma_so']] = item['Ho_ten']
 
-    for Tivi in Danh_sach_Tivi:
-        thong_tin = Tong_ket_1_Tivi_Theo_Ngay_Cua_Nhan_Vien(Tivi, Ngay)
-        # print(thong_tin)
-        # print("-"*30)
-        if thong_tin['So_luong'] != 0:
-            Danh_sach.append(thong_tin)
-    # print(dic)
-    # print(Danh_sach)
+    for key, value in dic.items():
+        for Tivi in Danh_sach_Tivi:
+            thong_tin = Tong_ket_1_Tivi_Theo_Ngay_Cua_Nhan_Vien(Tivi, Ngay, key)
+            # print(thong_tin)
+            # print("-"*30)
+            if thong_tin['So_luong'] != 0:
+                Danh_sach.append(thong_tin)
+        # print(dic)
+        # print(Danh_sach)
     return Danh_sach,dic
 
 def Lay_Thuong_Hieu():
