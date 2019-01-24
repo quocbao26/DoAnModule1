@@ -4,7 +4,7 @@
     "Ky_hieu": "KDL-40W650D",
     "Don_gia_Ban": 9900000,
     "Don_gia_Nhap": 7990000,
-    "So_luong_Ton": 73,
+    "So_luong_Ton": 69,
     "Danh_sach_Phieu_Ban": [
         {
             "Ngay": "28-12-2017",
@@ -81,6 +81,26 @@
             "So_luong": 2,
             "Don_gia": 9990000,
             "Tien": 19980000,
+            "Nhan_vien": {
+                "Ho_ten": "Tô thị bé Bé",
+                "Ma_so": "NV_2"
+            }
+        },
+        {
+            "Ngay": "24-01-2019",
+            "So_luong": 3,
+            "Don_gia": 9900000,
+            "Tien": 29700000,
+            "Nhan_vien": {
+                "Ho_ten": "Nguyên văn bé Xíu",
+                "Ma_so": "NV_3"
+            }
+        },
+        {
+            "Ngay": "24-01-2019",
+            "So_luong": 1,
+            "Don_gia": 9900000,
+            "Tien": 9900000,
             "Nhan_vien": {
                 "Ho_ten": "Tô thị bé Bé",
                 "Ma_so": "NV_2"

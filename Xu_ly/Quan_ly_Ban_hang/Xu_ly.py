@@ -74,7 +74,7 @@ def Tong_ket_1_Tivi_Theo_Ngay_Cua_Nhan_Vien(Tivi, Ngay):
             Don_gia = Phieu_ban['Don_gia']
             Ma_so_nv = Phieu_ban['Nhan_vien']['Ma_so']
     Thong_tin = {'Ma_so':Ma_so_nv,'Ten':Tivi['Ten'], 'So_luong':Tong_So_luong, 'Don_gia': Don_gia, 'Tien':Tong_Tien}
-    # print(Thong_tin)
+    print(Thong_tin)
     return Thong_tin
 
 def Tong_ket_Doanh_thu_theo_Tivi(Danh_sach_Tivi, Ngay):

@@ -7,7 +7,7 @@ app.secret_key = "2019"
 
 @app.route('/', methods=['GET', 'POST'])
 def Dang_Nhap():
-    if session.get('Nhan_vien_Dang_nhap'):
+    if session.get('Nhan_vien_Ban_hang'):
         return redirect(url_for('index'))
     Cong_ty = Doc_Cong_ty()
     Ten_dang_nhap = ""
@@ -19,7 +19,7 @@ def Dang_Nhap():
         
         nhan_vien = Dang_nhap_Nhan_vien(Cong_ty['Danh_sach_Nhan_vien_Ban_hang'] ,Ten_dang_nhap, Mat_khau)
         if nhan_vien != None:
-            session['Nhan_vien_Dang_nhap'] = nhan_vien
+            session['Nhan_vien_Ban_hang'] = nhan_vien
             return redirect(url_for('index'))
         else:
             Chuoi_Thong_bao = "Đăng nhập thất bại"
@@ -29,7 +29,7 @@ def Dang_Nhap():
 
 @app.route('/Nhan_vien_Ban_hang', methods=['GET', 'POST'])
 def index():
-    Nhan_vien_Dang_nhap = session['Nhan_vien_Dang_nhap']
+    Nhan_vien_Dang_nhap = session['Nhan_vien_Ban_hang']
     Chuoi_HTML_Nhan_vien = Tao_chuoi_HTML_Nhan_vien(Nhan_vien_Dang_nhap)
 
     url_MH = "/Nhan_vien_Ban_hang/Xem_Danh_sach_Tivi"
@@ -47,7 +47,7 @@ def index():
     return render_template('Nhan_vien_Ban_hang/MH_Chinh.html', Dia_chi_MH=url_MH, Chuoi_HTML_Nhan_vien=Chuoi_HTML_Nhan_vien)
 
 def Thong_tin():
-    Nhan_vien_Dang_nhap = session['Nhan_vien_Dang_nhap']
+    Nhan_vien_Dang_nhap = session['Nhan_vien_Ban_hang']
     Chuoi_HTML_Nhan_vien = Tao_chuoi_HTML_Nhan_vien(Nhan_vien_Dang_nhap)
     Danh_sach_Tivi = Doc_Danh_Sach_Tivi()
     return Chuoi_HTML_Nhan_vien, Danh_sach_Tivi
@@ -75,7 +75,7 @@ def Tra_cuu_Tivi_theo_Chuoi_Tra_cuu(Chuoi_Tra_cuu):
 
 @app.route('/Nhan_vien_Ban_hang/Ban/<string:Ma_so>/', methods=['GET', 'POST'])
 def Nhan_vien_Ban_Tivi(Ma_so):
-    Nhan_vien_Dang_nhap = session['Nhan_vien_Dang_nhap']
+    Nhan_vien_Dang_nhap = session['Nhan_vien_Ban_hang']
     Chuoi_HTML_Nhan_vien, Danh_sach_Tivi = Thong_tin()
     Tivi_Chon = Lay_Chi_tiet_Tivi(Danh_sach_Tivi, Ma_so)
 
@@ -103,7 +103,7 @@ def Liet_ke_Phieu_nhap():
 
 @app.route('/Nhan_vien_Ban_hang/Dang_xuat/', methods=['GET', 'POST'])
 def Dang_Xuat():
-    session.pop('Nhan_vien_Dang_nhap', None)
+    session.pop('Nhan_vien_Ban_hang', None)
     return redirect(url_for('Dang_Nhap'))
 
 

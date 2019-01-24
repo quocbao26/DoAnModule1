@@ -2,9 +2,9 @@
     "Ten": "Smart Tivi Cong Samsung 49 inch",
     "Ma_so": "TIVI_1",
     "Ky_hieu": "UA49MU6500",
-    "Don_gia_Ban": 29880000,
-    "Don_gia_Nhap": 29880000,
-    "So_luong_Ton": 65,
+    "Don_gia_Ban": 29850000,
+    "Don_gia_Nhap": 29800000,
+    "So_luong_Ton": 70,
     "Danh_sach_Phieu_Ban": [
         {
             "Ngay": "21-01-2019",
@@ -55,6 +55,16 @@
                 "Ho_ten": "Tô thị bé Bé",
                 "Ma_so": "NV_2"
             }
+        },
+        {
+            "Ngay": "24-01-2019",
+            "So_luong": 5,
+            "Don_gia": 29880000,
+            "Tien": 149400000,
+            "Nhan_vien": {
+                "Ho_ten": "Tô thị bé Bé",
+                "Ma_so": "NV_2"
+            }
         }
     ],
     "Danh_sach_Phieu_Nhap": [
@@ -73,6 +83,16 @@
             "So_luong": 10,
             "Don_gia": 29900000,
             "Tien": 299000000,
+            "Nhan_vien": {
+                "Ho_ten": "Nguyễn thị bé Nhỏ",
+                "Ma_so": "NV_1"
+            }
+        },
+        {
+            "Ngay": "24-01-2019",
+            "So_luong": 10,
+            "Don_gia": 29880000,
+            "Tien": 298800000,
             "Nhan_vien": {
                 "Ho_ten": "Nguyễn thị bé Nhỏ",
                 "Ma_so": "NV_1"

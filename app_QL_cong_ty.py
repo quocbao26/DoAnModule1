@@ -8,7 +8,7 @@ app.secret_key = "2019"
 
 @app.route('/', methods=['GET', 'POST'])
 def Dang_Nhap():
-    if session.get('Quan_ly_Dang_nhap'):
+    if session.get('Quan_ly_Cong_ty'):
         return redirect(url_for('index'))
     Cong_ty = Doc_Cong_ty()
     Ten_dang_nhap = ""
@@ -20,7 +20,7 @@ def Dang_Nhap():
 
         quan_ly = Dang_nhap_Quan_ly(Cong_ty['Danh_sach_Quan_ly_Cong_ty'], Ten_dang_nhap, Mat_khau)
         if quan_ly != None:
-            session['Quan_ly_Dang_nhap'] = quan_ly
+            session['Quan_ly_Cong_ty'] = quan_ly
             return redirect(url_for('index'))
         else:
             Chuoi_Thong_bao = "Đăng nhập thất bại"
@@ -30,7 +30,7 @@ def Dang_Nhap():
 
 @app.route('/Quan_ly_Cong_ty', methods=['GET', 'POST'])
 def index():
-    Quan_ly_Dang_nhap = session['Quan_ly_Dang_nhap']
+    Quan_ly_Dang_nhap = session['Quan_ly_Cong_ty']
     Chuoi_HTML_Quan_ly = Tao_chuoi_HTML_Quan_ly(Quan_ly_Dang_nhap)
 
     url_MH = "/Quan_ly_Cong_ty/Xem_Danh_sach_Tivi"
@@ -53,7 +53,7 @@ def index():
 
 
 def Thong_tin():
-    Quan_ly_Dang_nhap = session['Quan_ly_Dang_nhap']
+    Quan_ly_Dang_nhap = session['Quan_ly_Cong_ty']
     Chuoi_HTML_Quan_ly = Tao_chuoi_HTML_Quan_ly(Quan_ly_Dang_nhap)
     Danh_sach_Tivi = Doc_Danh_Sach_Tivi()
     return Chuoi_HTML_Quan_ly, Danh_sach_Tivi
@@ -141,7 +141,7 @@ def Liet_ke_doanh_thu_theo_nhan_vien():
 
 @app.route('/Quan_ly_Cong_ty/Dang_xuat/', methods=['GET', 'POST'])
 def Dang_Xuat():
-    session.pop('Quan_ly_Dang_nhap', None)
+    session.pop('Quan_ly_Cong_ty', None)
     return redirect(url_for('Dang_Nhap'))
 
 
